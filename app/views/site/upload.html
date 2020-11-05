@@ -1,0 +1,28 @@
+{% extends "site/master.html" %} {% block content %}
+
+<h2>Upload</h2>
+
+<form id="form">
+
+    <!-- <input type="text" name="firstName" value="">
+    <input type="text" name="lastName" value="">
+    <input type="text" name="email" value="">
+
+    <button type="submit" name="button">Cadastrar</button> -->
+
+    <input type="file" name="file">
+    <button type="submit" name="button">Upload</button>
+
+
+</form>
+
+
+
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="./assets/site/index.js" charset="utf-8"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" charset="utf-8"></script>
+{% endblock %}

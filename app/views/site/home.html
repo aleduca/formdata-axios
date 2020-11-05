@@ -1,0 +1,17 @@
+{% extends "site/master.html" %} {% block content %}
+
+<h2>Home</h2>
+
+<a href="/user/create" class="btn btn-info">Create</a>
+
+{{ message['message']|message(message['alert'])|raw }}
+
+<div x-data="app()" x-init="() => data()">
+    <ul>
+        <template x-for="user in users">
+            <li x-text="`${user.firstName} ${user.lastName}`"></li>
+        </template>
+    </ul>
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "site/master.html" %} {% block content %}
+
+<h2>login</h2>
+
+{% if logged_in %} Você já está logado {% else %}
+<div x-data="login()">
+    <div :class="message('logged', 'success').type" x-text="message('logged').message"></div>
+    <div :class="message('not_logged', 'danger').type" x-text="message('not_logged').message"></div>
+
+    <form @submit.prevent="login" x-show="!messages['success']">
+        <input type="text" name="email" class="form-control" placeholder="seu email" x-model="modal.email" />
+        <span :class="message('email').type" x-text="message('email').message"></span>
+        <br />
+        <input type="password" name="password" class="form-control" placeholder="sua senha" x-model="modal.password" />
+        <span :class="message('password').type" x-text="message('password').message"></span>
+        <br />
+        <button type="submit" class="btn btn-info" id="btn-create">Logar</button>
+    </form>
+</div>
+
+{% endif %} {% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="./assets/site/index.js"></script>
+{% endblock %}
